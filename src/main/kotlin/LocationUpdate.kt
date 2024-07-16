@@ -1,5 +1,5 @@
 class LocationUpdate(newStatus: String, timestamp: Long, shipmentID: String, private var additionalInfo: String,
-                     previousStatus: String?
+                     previousStatus: String? = null
 ) : ShippingUpdate(newStatus, timestamp,
     shipmentID, previousStatus
 ) {

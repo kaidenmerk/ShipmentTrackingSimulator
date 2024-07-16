@@ -1,5 +1,5 @@
 class CreatedUpdate(newStatus: String, timestamp: Long, shipmentID: String,
-                    previousStatus: String?
+                    previousStatus: String? = null
 ) : ShippingUpdate(newStatus, timestamp,
     shipmentID, previousStatus
 ) {

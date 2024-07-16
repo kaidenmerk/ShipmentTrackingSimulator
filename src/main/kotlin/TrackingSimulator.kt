@@ -1,3 +1,5 @@
+import java.io.File
+
 class TrackingSimulator {
     private val shipments: MutableList<Shipment> = mutableListOf()
 
@@ -29,5 +31,24 @@ class TrackingSimulator {
             addShipment(newShipment)
             newShipment.addUpdate(update)
         }
+    }
+    fun loadUpdatesFromFile(filename: String): List<ShippingUpdate> {
+        val updates = mutableListOf<ShippingUpdate>()
+        File(filename).forEachLine { line ->
+            val parts = line.split(",")
+            val update = when (parts[0]) {
+                "created" -> CreatedUpdate("created", parts[2].toLong(), parts[1])
+                "shipped" -> ShippedUpdate("shipped",  parts[2].toLong(), parts[1], parts[3])
+                "location" -> LocationUpdate("location",  parts[2].toLong(), parts[1], parts[3])
+                "delivered" -> DeliveredUpdate("delivered",  parts[2].toLong(), parts[1])
+                "delayed" -> DelayedUpdate("delayed",  parts[2].toLong(), parts[1], parts[3])
+                "lost" -> LostUpdate("lost",  parts[2].toLong(), parts[1])
+                "canceled" -> CanceledUpdate("canceled",  parts[2].toLong(), parts[1])
+                "noteadded" -> NoteAddedUpdate("noteadded", parts[2].toLong(), parts[1], parts[3])
+                else -> null
+            }
+            if (update != null) updates.add(update)
+        }
+        return updates
     }
 }

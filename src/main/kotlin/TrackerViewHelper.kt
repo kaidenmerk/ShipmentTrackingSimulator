@@ -4,7 +4,7 @@ class TrackerViewHelper : Observer {
     private var shipmentUpdateHistory: MutableList<String> = mutableListOf()
     private var expectedShipmentDeliveryDate: Long? = null
     private var shipmentStatus: String = ""
-    
+
     override fun update(shipment: Shipment) {
         TODO("Not yet implemented")
     }

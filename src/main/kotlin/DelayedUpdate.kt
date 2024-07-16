@@ -1,5 +1,5 @@
 class DelayedUpdate(newStatus: String, timestamp: Long, shipmentID: String, var additionalInfo: String,
-                    previousStatus: String?
+                    previousStatus: String? = null
 ) : ShippingUpdate(newStatus, timestamp,
     shipmentID, previousStatus
 ) {
