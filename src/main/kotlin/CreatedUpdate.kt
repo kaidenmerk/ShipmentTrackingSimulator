@@ -5,7 +5,7 @@ class CreatedUpdate(newStatus: String, timestamp: Long, shipmentID: String, addi
     additionalInfo, previousStatus
 ) {
     override fun applyUpdate(shipment: Shipment) {
-        TODO("Not yet implemented")
+        shipment.setStatus(newStatus)
     }
 
 }

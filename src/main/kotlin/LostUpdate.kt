@@ -1,11 +1,10 @@
-class LostUpdate(newStatus: String, timestamp: Long, shipmentID: String, additionalInfo: String?,
+class LostUpdate(newStatus: String, timestamp: Long, shipmentID: String,
                  previousStatus: String?
 ) : ShippingUpdate(newStatus, timestamp,
-    shipmentID,
-    additionalInfo, previousStatus
+    shipmentID, previousStatus
 ) {
     override fun applyUpdate(shipment: Shipment) {
-        TODO("Not yet implemented")
+        shipment.setStatus(newStatus)
     }
 
 }

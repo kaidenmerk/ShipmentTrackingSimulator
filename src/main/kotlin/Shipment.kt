@@ -1,11 +1,22 @@
-class Shipment(id: String) : Observable {
-    val status: String = ""
-    val id: String = id
-    val notes: MutableList<String> = mutableListOf()
-    val updateHistory: MutableList<ShippingUpdate> = mutableListOf()
-    val expectedDeliveryDateTimestamp: Long? = null
-    val currentLocation: String = ""
+class Shipment(
+    val id: String,
+    private var status: String,
+    private val notes: MutableList<String> = mutableListOf(),
+    private val updateHistory: MutableList<ShippingUpdate> = mutableListOf(),
+    private var expectedDeliveryDateTimestamp: Long? = null,
+    private var currentLocation: String = "",
     private val observers: MutableList<Observer> = mutableListOf()
+) : Observable {
+    fun addNote(note: String) {
+        notes.add(note)
+        notifyObservers()
+    }
+
+    fun addUpdate(update: ShippingUpdate) {
+        updateHistory.add(update)
+        update.applyUpdate(this)
+        notifyObservers()
+    }
 
     override fun addObserver(observer: Observer) {
         observers.add(observer)
@@ -16,18 +27,21 @@ class Shipment(id: String) : Observable {
     }
 
     override fun notifyObservers() {
-        observers.forEach {
-            it.update(this)
-        }
+        observers.forEach { it.update(this) }
+    }
+    fun getStatus() = status
+    fun setStatus(newStatus: String) {
+        status = newStatus
+
     }
 
-    // Applying update applies to status, updateHistory, expectedDeliveryDateTimestamp, and currentLocation
-    fun addUpdate(update: ShippingUpdate) {
-        updateHistory.add(update)
-        update.applyUpdate(this)
+    fun getExpectedDeliveryDateTimestamp() = expectedDeliveryDateTimestamp
+    fun setExpectedDeliveryDateTimestamp(timestamp: Long) {
+        expectedDeliveryDateTimestamp = timestamp
     }
 
-    fun addNote (note: String) {
-        notes.add(note)
+    fun getCurrentLocation() = currentLocation
+    fun setCurrentLocation(location: String) {
+        currentLocation = location
     }
 }
