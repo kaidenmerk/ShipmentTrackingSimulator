@@ -32,7 +32,6 @@ class Shipment(
     fun getStatus() = status
     fun setStatus(newStatus: String) {
         status = newStatus
-
     }
 
     fun getExpectedDeliveryDateTimestamp() = expectedDeliveryDateTimestamp

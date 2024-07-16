@@ -1,8 +1,7 @@
-class CreatedUpdate(newStatus: String, timestamp: Long, shipmentID: String, additionalInfo: String?,
+class CreatedUpdate(newStatus: String, timestamp: Long, shipmentID: String,
                     previousStatus: String?
 ) : ShippingUpdate(newStatus, timestamp,
-    shipmentID,
-    additionalInfo, previousStatus
+    shipmentID, previousStatus
 ) {
     override fun applyUpdate(shipment: Shipment) {
         shipment.setStatus(newStatus)
