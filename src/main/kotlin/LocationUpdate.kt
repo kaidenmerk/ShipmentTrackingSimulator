@@ -1,2 +1,2 @@
-class LocationUpdate {
+class LocationUpdate : ShippingUpdate() {
 }

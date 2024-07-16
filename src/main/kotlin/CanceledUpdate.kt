@@ -1,2 +1,2 @@
-class CanceledUpdate {
+class CanceledUpdate : ShippingUpdate() {
 }

@@ -1,2 +1,2 @@
-class LostUpdate {
+class LostUpdate : ShippingUpdate() {
 }

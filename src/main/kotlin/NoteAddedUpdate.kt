@@ -1,2 +1,2 @@
-class NoteAddedUpdate {
+class NoteAddedUpdate : ShippingUpdate() {
 }

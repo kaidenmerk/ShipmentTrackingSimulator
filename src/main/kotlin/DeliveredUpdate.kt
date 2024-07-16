@@ -1,2 +1,2 @@
-class DeliveredUpdate {
+class DeliveredUpdate : ShippingUpdate() {
 }

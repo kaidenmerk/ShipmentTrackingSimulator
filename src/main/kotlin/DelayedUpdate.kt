@@ -1,2 +1,2 @@
-class DelayedUpdate {
+class DelayedUpdate : ShippingUpdate() {
 }
