@@ -23,6 +23,7 @@ class TrackingSimulator {
         if (shipment != null) {
             shipment.addUpdate(update)
         }
+        // Only create Shipment if is CreatedUpdate
         else if (update is CreatedUpdate) {
             val newShipment = Shipment(
                 id = update.shipmentID,
