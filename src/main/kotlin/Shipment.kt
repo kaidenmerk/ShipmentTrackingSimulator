@@ -43,4 +43,10 @@ class Shipment(
     fun setCurrentLocation(location: String) {
         currentLocation = location
     }
+
+    fun getNotes() = notes
+
+    fun getUpdateHistory() = updateHistory
+
+
 }
