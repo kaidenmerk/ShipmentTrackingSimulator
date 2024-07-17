@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class NoteAddedUpdate(
     newStatus: String,
     timestamp: Long,

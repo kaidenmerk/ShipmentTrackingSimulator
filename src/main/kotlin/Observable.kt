@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 interface Observable {
     fun addObserver(observer: Observer)
     fun removeObserver(observer: Observer)

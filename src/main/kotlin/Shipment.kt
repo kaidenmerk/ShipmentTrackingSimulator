@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class Shipment(
     val id: String,
     private var status: String,

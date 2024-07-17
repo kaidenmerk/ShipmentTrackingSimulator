@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class LostUpdate(
     newStatus: String,
     timestamp: Long,

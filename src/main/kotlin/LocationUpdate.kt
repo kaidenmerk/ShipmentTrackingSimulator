@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class LocationUpdate(
     newStatus: String,
     timestamp: Long,

@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class CreatedUpdate(
     newStatus: String,
                     timestamp: Long,

@@ -1,3 +1,4 @@
+package shipmentTrackingSim
 class TrackerViewHelper : Observer {
     // Shipment Object Observer
     var shipmentId: String = ""

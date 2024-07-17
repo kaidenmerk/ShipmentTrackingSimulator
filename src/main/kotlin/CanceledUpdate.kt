@@ -1,3 +1,4 @@
+package shipmentTrackingSim
 class CanceledUpdate(
     newStatus: String,
     timestamp: Long,

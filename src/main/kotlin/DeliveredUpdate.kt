@@ -1,3 +1,5 @@
+package shipmentTrackingSim
+
 class DeliveredUpdate(
     newStatus: String,
     timestamp: Long,
