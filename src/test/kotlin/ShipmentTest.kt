@@ -1,4 +1,4 @@
-package shipmentTrackingSimTests
+package test
 import shipmentTrackingSim.*
 
 import org.junit.jupiter.api.Assertions.*
